@@ -112,14 +112,7 @@ The arguments to run “./tr_ae/train.py” are as follows:
 Example:
 
 ```
-python ./tr_ae/train.py --input ./data/C_Data/C_500k.txt --epochs 50 --batch_size 32 --lr 0.0001 --latent_dim 10 --d_seg 1024 --seed 0 --max_k 6 --output data/C_Data
-```
-
-We also provide a script “run_real_data.sh” to run all three real data sets(C,D,E). 
-
-```
-chmod +x run_real_data.sh
-./run_real_data.sh
+python ./tr_ae/train.py --input ./data/example.txt --epochs 200 --batch_size 32--lr 0.0001 --latent_dim 10 --seed 0 --output data
 ```
 
 ## Step 3: detect single-cell CNAs
