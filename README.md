@@ -1,6 +1,6 @@
 # CoT
 
-CoT is a transformer based method for detecting tumor clones and copy number alterations from single-cell DNA sequencing data.
+Copy number Transformer for scDNA-seq data.
 
 ## Requirements
 
@@ -57,7 +57,8 @@ To successfully run the command you will need to obtain/create these items:
 
 Reference sequence file formatted as .fasta can be downloaded from [UCSC genome browser](http://hgdownload.soe.ucsc.edu/downloads.html).
 
-Mappability files formatted as .bw for human genomes are available from [UCSC genome browser](http://hgdownload.soe.ucsc.edu/downloads.html). 
+Mappability files formatted as .bw for human genomes are available from UCSC genome browser (https://hgdownload.soe.ucsc.edu/goldenPath/hg18/encodeDCC/wgEncodeMapability/ for hg18, https://hgdownload.soe.ucsc.edu/goldenPath/hg19/encodeDCC/wgEncodeMapability/ for hg19, and https://hgdownload.soe.ucsc.edu/gbdb/hg38/hoffmanMappability/ for hg38). 
+
 Users can also generate their own mappability files using [gem-library](https://sourceforge.net/projects/gemlibrary/files/gem-library/Binary%20pre-release%203/) and [wigToBigWig](http://hgdownload.soe.ucsc.edu/admin/exe/linux.x86_64/) utility.
 
 Here is an example for creating mappability file from reference sequence 
