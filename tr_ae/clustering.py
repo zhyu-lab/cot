@@ -19,7 +19,7 @@ class GMM:
         self.z = self.X[:, 2]
         self.max_num_cluster = max_k
 
-    def cluster(self, path):
+    def cluster(self, path,  cov_type="tied"):
         bic = []
         labels_all = []
         valid = []
@@ -30,7 +30,7 @@ class GMM:
         # Gaussian mixture model is used for clustering, and BIC is used to select the optimal number of clusters
         while n_components <= self.max_num_cluster:
             n_components_range.append(n_components)
-            gmm = GaussianMixture(n_components=n_components, covariance_type='tied', n_init=100)
+            gmm = GaussianMixture(n_components=n_components, covariance_type=cov_type, n_init=100)
             gmm.fit(self.X)
             labels = gmm.predict(self.X)
             labels_u, counts = np.unique(labels, return_counts=True)

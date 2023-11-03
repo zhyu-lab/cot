@@ -104,7 +104,7 @@ def main(args):
         max_k = np.max([1, feature_List.shape[0] // 5])
     else:
         max_k = np.min([args.max_k, feature_List.shape[0] // 5])
-    label_p, number = GMM(feature_List, max_k).cluster(output_dir)
+    label_p, number = GMM(feature_List, max_k).cluster(output_dir, args.cov_type)
     print('inferred number of clusters: {}'.format(number))
 
     # save results
@@ -135,15 +135,17 @@ def main(args):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="CoT")
-    parser.add_argument('--epochs', type=int, default=20, help='number of epoches to train the CoT.')
+    parser.add_argument('--epochs', type=int, default=300, help='number of epoches to train the CoT.')
     parser.add_argument('--batch_size', type=int, default=32, help='batch size.')
     parser.add_argument('--lr', type=float, default=0.0001, help='learning rate.')
-    parser.add_argument('--max_k', type=int, default=10, help='the maximum number of clusters to consider.')
+    parser.add_argument('--max_k', type=int, default=-1, help='the maximum number of clusters to consider.')
     parser.add_argument('--latent_dim', type=int, default=10, help='the latent dimension.')
     parser.add_argument('--seed', type=int, default=0, help='random seed.')
     parser.add_argument('--input', type=str, default='', help='a file containing read counts, GC-content and mappability data.')
     parser.add_argument('--output', type=str, default='', help='a directory to save results.')
-    parser.add_argument('--d_seg', type=int, default=512,
+    parser.add_argument('--d_seg', type=int, default=256,
                         help='the dimension of model or the size of the data segment.')
+    parser.add_argument('--cov_type', type=str, default='full',
+                        help='the covariance shape of each mixture component.')
     args = parser.parse_args()
     main(args)
