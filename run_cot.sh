@@ -49,7 +49,7 @@ python ./tr_ae/train.py --input $output_dir/readcounts.txt --epochs 200 --batch_
 
 echo "Step 3. detect single-cell copy number alterations......"
 # the path to MCR v91 needs to be specified
-./hmm/run_SCHMM.sh /usr/local/MATLAB/MATLAB_Runtime/v91 $output_dir/lrc.txt $output_dir 10 >> $log_file 2>&1
+./hmm/run_CloneHMM.sh /usr/local/MATLAB/MATLAB_Runtime/v91 $output_dir/lrc.txt $output_dir/label.txt $output_dir 10 >> $log_file 2>&1
 
 current=`date "+%Y-%m-%d %H:%M:%S"`
 seconds_e=`date -d "$current" +%s`
