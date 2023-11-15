@@ -34,7 +34,6 @@ def main(args):
 
     setup_seed(args.seed)
     train_set = get_seg_data(data_bk, args.d_seg)
-    loader = Data.DataLoader(CellDataSet(train_set), args.batch_size, True)
     # define and create Transformer architecture
     set_tr_parameter(args.d_seg, train_set, args.latent_dim)
     model = Transformer().cuda()
@@ -48,6 +47,7 @@ def main(args):
     for epoch in range(args.epochs):
         losses = []
         epochList.append(epoch)
+        loader = Data.DataLoader(CellDataSet(train_set), args.batch_size, True)
         for enc_inputs in loader:
             ori_inputs = enc_inputs.cuda()
             enc_inputs = ori_inputs.clone()
