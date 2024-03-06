@@ -116,6 +116,10 @@ Example:
 python ./tr_ae/train.py --input ./data/example.txt --epochs 200 --batch_size 32 --lr 0.0001 --latent_dim 10 --d_seg 256 --seed 0 --max_k -1 --output data
 ```
 
+```
+python ./tr_ae/train.py --input ./data/10X_Genomics_dataset_C.txt --epochs 50 --batch_size 32 --lr 0.0001 --latent_dim 10 --d_seg 1024 --seed 0 --max_k 6 --output data --cov_type='tied'
+```
+
 ## Step 3: detect single-cell CNAs
 
 The “./hmm/CloneHMM.m” MATLAB script is used to call single-cell CNAs. 
