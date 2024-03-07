@@ -152,6 +152,19 @@ Example:
 
 Type ./run_cot.sh to learn details about how to use this script.
 
+## Citation
+
+Please cite CoT in your publications if it helps your research:
+
+``` bibtex
+@article{liu2024cot,
+  title={CoT: a transformer-based method for inferring tumor clonal copy number substructure from scDNA-seq data},
+  author={Furui Liu, Fangyuan Shi, Fang Du, Xiangmei Cao and Zhenhua Yu},
+  journal={Briefings in Bioinformatics, revision submitted},
+  year={2024}
+}
+```
+
 # Contact
 
 If you have any questions, please contact lfr_nxu@163.com.
