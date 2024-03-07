@@ -117,7 +117,7 @@ python ./tr_ae/train.py --input ./data/example.txt --epochs 200 --batch_size 32 
 ```
 
 ```
-python ./tr_ae/train.py --input ./data/10X_Genomics_dataset_C.txt --epochs 50 --batch_size 32 --lr 0.0001 --latent_dim 10 --d_seg 1024 --seed 0 --max_k 6 --output data --cov_type='tied'
+python ./tr_ae/train.py --input ./data/10X_Genomics_dataset_C.txt --epochs 50 --batch_size 32 --lr 0.0001 --latent_dim 10 --d_seg 1024 --seed 0 --output data --cov_type='tied'
 ```
 
 ## Step 3: detect single-cell CNAs
@@ -137,6 +137,7 @@ Example:
 
 ```
 CloneHMM('../data/lrc.txt','../data/label.txt','../data',10)
+plot_cn_results('../data')
 ```
 
 **We also provide a script “run_cot.sh” to integrate all three steps to run CoT.**
