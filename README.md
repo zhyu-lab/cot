@@ -160,7 +160,7 @@ Please cite CoT in your publications if it helps your research:
 @article{liu2024cot,
   title={CoT: a transformer-based method for inferring tumor clonal copy number substructure from scDNA-seq data},
   author={Furui Liu, Fangyuan Shi, Fang Du, Xiangmei Cao and Zhenhua Yu},
-  journal={Briefings in Bioinformatics, revision submitted},
+  journal={Briefings in Bioinformatics},
   year={2024}
 }
 ```
