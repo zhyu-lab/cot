@@ -33,6 +33,24 @@ conda activate cot
 
 ## Install requirements
 
+To successfully compile the source code, please make sure g++-5 is installed on your machine.
+you can install it using following commands:
+
+```bash
+sudo apt install gcc-5 g++-5
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-5 20  
+sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-5 20
+```
+
+If your current compiler is not g++-5, you need to change the current compiler to gcc-5 and g++-5:
+
+```bash
+sudo update-alternatives --config gcc
+sudo update-alternatives --config g++
+```
+
+Then install related packages and compile the code:
+
 ```bash
 python -m pip install -r ./tr_ae/requirements.txt
 cd prep
@@ -40,6 +58,17 @@ cmake .
 make
 cd ..
 chmod +x run_cot.sh ./hmm/run_CloneHMM.sh ./hmm/CloneHMM
+```
+
+If the version of PyTorch does not match the CUDA version, 
+you can find version dependence between PyTorch and CUDA at https://pytorch.org/get-started/previous-versions/, 
+and select appropriate PyTorch version to install on your machine.
+
+After the installation completes, you can reset the compiler using same commands:
+
+```bash
+sudo update-alternatives --config gcc
+sudo update-alternatives --config g++
 ```
 
 # Usage
@@ -156,7 +185,7 @@ Type ./run_cot.sh to learn details about how to use this script.
 
 Please cite CoT in your publications if it helps your research:
 
-``` bibtex
+```bibtex
 @article{liu2024cot,
   title={CoT: a transformer-based method for inferring tumor clonal copy number substructure from scDNA-seq data},
   author={Furui Liu, Fangyuan Shi, Fang Du, Xiangmei Cao and Zhenhua Yu},
